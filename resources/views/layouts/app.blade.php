@@ -19,6 +19,7 @@
           <li><a href="{{ url('/berita') }}">Berita</a></li>
           <li><a href="{{ url('/profile') }}">Profile</a></li>
           <li><a href="{{ url('/contact') }}">Contact</a></li>
+          <li><a href="{{ url('/aboutme') }}">Aboutme</a></li>
         </ul>
       </nav>
     </div>
