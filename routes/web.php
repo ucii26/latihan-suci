@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controlers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +35,11 @@ Route::get('/aboutme', function () {
     return view('aboutme');
 });
 
+//route untuk berita
+Route::get('/berita', [BeritaController::class, 'index'])->name( 'berita.index');
+Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita.show');
+
+//route untuk data mahasiswa
+Route::get('/datamahasiswa', [MahasiswaController::class, 'index' ]);
 
 
