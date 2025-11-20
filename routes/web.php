@@ -41,5 +41,3 @@ Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita.sh
 
 //route untuk data mahasiswa
 Route::get('/datamahasiswa', [MahasiswaController::class, 'index' ]);
-
-
