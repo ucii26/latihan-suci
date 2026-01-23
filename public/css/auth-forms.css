@@ -1,0 +1,581 @@
+/* ==========================================
+   AUTHENTICATION PAGES - Premium Style
+   ========================================== */
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #E91E63 0%, #FF1493 50%, #FF69B4 100%);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.auth-container::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 50px 40px;
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  animation: slideInUp 0.6s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.auth-card h2 {
+  color: var(--primary);
+  font-weight: 800;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+}
+
+.auth-card .form-control {
+  border: 2px solid #e8eaf0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  background: #f9f9fb;
+}
+
+.auth-card .form-control:focus {
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 0 0 0.3rem rgba(233, 30, 99, 0.25);
+}
+
+.auth-card .form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #e8eaf0;
+  cursor: pointer;
+}
+
+.auth-card .form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.auth-card .btn-primary {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #E91E63 0%, #FF1493 100%);
+  border: none;
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.4);
+  transition: all 0.3s ease;
+}
+
+.auth-card .btn-primary:hover {
+  box-shadow: 0 15px 40px rgba(233, 30, 99, 0.6);
+  transform: translateY(-2px);
+}
+
+.auth-card hr {
+  margin: 30px 0;
+  border-color: #e8eaf0;
+}
+
+.auth-card .auth-links {
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.auth-card .auth-links a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.auth-card .auth-links a:hover {
+  text-decoration: underline;
+}
+
+.demo-credentials {
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.1) 0%, rgba(255, 105, 180, 0.1) 100%);
+  padding: 18px;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+  margin-top: 20px;
+}
+
+.demo-credentials h6 {
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.demo-credentials p {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 6px 0;
+  font-family: 'Courier New', monospace;
+}
+
+.toggle-password {
+  cursor: pointer;
+  color: var(--primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.toggle-password:hover {
+  transform: scale(1.1);
+}
+
+/* ==========================================
+   CONTACT FORM - Special Styling
+   ========================================== */
+
+.contact-container {
+  background: linear-gradient(135deg, #f5f6fa 0%, #e8eaf0 100%);
+  padding: 60px 20px;
+}
+
+.contact-title {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: slideInDown 0.6s ease;
+}
+
+.contact-title h2 {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid var(--primary);
+}
+
+.contact-card .form-group {
+  margin-bottom: 25px;
+}
+
+.contact-card .form-label {
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.contact-card .form-control,
+.contact-card textarea {
+  border: 2px solid #e8eaf0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  background: #f9f9fb;
+  color: #2d3436;
+}
+
+.contact-card .form-control:focus,
+.contact-card textarea:focus {
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 0 0 0.3rem rgba(233, 30, 99, 0.15);
+}
+
+.contact-card textarea {
+  resize: vertical;
+  min-height: 140px;
+  font-family: inherit;
+}
+
+.contact-card .is-invalid {
+  border-color: #f5576c !important;
+}
+
+.contact-card .invalid-feedback {
+  color: #f5576c;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* ==========================================
+   PROFILE PAGES - Enhanced Design
+   ========================================== */
+
+.profile-section {
+  background: linear-gradient(135deg, #f5f6fa 0%, #e8eaf0 100%);
+  padding: 60px 20px;
+  min-height: 100vh;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-top: 6px solid var(--primary);
+  animation: slideInUp 0.6s ease;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile-img-container {
+  margin-bottom: 30px;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 6px solid var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 15px 40px rgba(233, 30, 99, 0.3);
+  animation: zoomIn 0.6s ease;
+  transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 20px 50px rgba(233, 30, 99, 0.4);
+}
+
+.profile-body {
+  margin-top: 40px;
+}
+
+.profile-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.profile-field {
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.05) 0%, rgba(255, 105, 180, 0.05) 100%);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+}
+
+.profile-field label {
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.profile-field p {
+  color: #2d3436;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ==========================================
+   DATA TABLE PAGES - Elegant Table Design
+   ========================================== */
+
+.table-section {
+  background: linear-gradient(135deg, #f5f6fa 0%, #e8eaf0 100%);
+  padding: 60px 20px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.table-header h1 {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.table-wrapper {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  animation: slideInUp 0.6s ease;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background: linear-gradient(135deg, #E91E63 0%, #FF1493 100%);
+  color: white;
+  border: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 18px;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  border-color: #e8eaf0;
+  padding: 16px 18px;
+  color: #2d3436;
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.table tbody tr:hover {
+  background: linear-gradient(90deg, rgba(233, 30, 99, 0.08) 0%, transparent 100%);
+  transform: scale(1.01);
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* ==========================================
+   ADD/EDIT FORM PAGES
+   ========================================== */
+
+.form-section {
+  background: linear-gradient(135deg, #f5f6fa 0%, #e8eaf0 100%);
+  padding: 60px 20px;
+  min-height: 100vh;
+}
+
+.form-card {
+  background: white;
+  border-radius: 16px;
+  padding: 50px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid var(--primary);
+  animation: slideInUp 0.6s ease;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-card h2 {
+  color: var(--primary);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.form-card .form-group {
+  margin-bottom: 25px;
+}
+
+.form-card .form-label {
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.form-card .form-control,
+.form-card select,
+.form-card textarea {
+  border: 2px solid #e8eaf0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  background: #f9f9fb;
+}
+
+.form-card .form-control:focus,
+.form-card select:focus,
+.form-card textarea:focus {
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 0 0 0.3rem rgba(233, 30, 99, 0.15);
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.form-actions .btn {
+  padding: 12px 40px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================== */
+
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 30px 25px;
+    max-width: 100%;
+  }
+
+  .profile-card {
+    padding: 30px 20px;
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .form-card {
+    padding: 30px 20px;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 20px 15px;
+  }
+
+  .auth-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+
+  .table {
+    font-size: 0.85rem;
+  }
+
+  .table thead th,
+  .table tbody td {
+    padding: 10px;
+  }
+}

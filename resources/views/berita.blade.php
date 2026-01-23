@@ -1,71 +1,85 @@
-@extends('layouts.app')
-
-@section('title', 'Berita')
+@extends('layouts.main')
 
 @section('content')
-  <div class="container page berita-page">
-    <h2>Berita Terbaru</h2>
+<div class="hero-section">
+    <div class="container">
+        <h1>
+            <i class="fas fa-newspaper"></i> Berita Terbaru
+        </h1>
+        <p>Informasi terkini dan artikel menarik untuk Anda</p>
+    </div>
+</div>
 
-    @php
-    //Data berita
-      $daftarBerita = [
-        [
-          'judul' => 'Perubahan Kurikulum 2025',
-          'slug' => 'Prubahan-Kurikulum-2025',
-          'penulis' => 'suci',
-          'isi' => 'Pemerintah mengumumkan perubahan kurikulum nasional yang akan berlaku mulai tahun ajaran depan. Perubahan ini mencakup peningkatan materi teknologi, literasi digital, dan pengembangan karakter.'
-        ],
-        [
-          'judul' => 'Inovasi Teknologi Hijau',
-          'slug' => 'Prubahan-Kurikulum-2025',
-          'penulis' => 'suci',
-          'isi' => 'Perusahaan rintisan meluncurkan teknologi baru ramah lingkungan yang dapat mengurangi polusi udara dan limbah industri secara signifikan.'
-        ],
-        [
-          'judul' => 'Festival Budaya Lokal',
-          'slug' => 'Prubahan-Kurikulum-2025',
-          'penulis' => 'suci',
-          'isi' => 'Komunitas lokal menyelenggarakan festival budaya dengan pertunjukan seni tradisional, kuliner khas, dan bazar kreatif.'
-        ],
-      ];
-
-      // Tangkap slug dari URL (jika ada)
-      $slug = request()->segment(2);
-
-      // Cek apakah slug cocok dengan salah satu berita
-      $beritaDipilih = collect($daftarBerita)->firstWhere('slug', $slug);
-    @endphp
-
-    {{--Jika slug tidak ada, tampilkan daftar berita --}}
-    @if(!$slug)
-      <h2>Berita Terbaru</h2>
-      <div class="berita-list">
-        @foreach($daftarBerita as $berita)
-          <div class="berita-item">
-            <h3>{{ $berita['judul'] }}</h3>
-            <p>{{ $berita['isi'] }}</p>
-            <a href="#" class="read-more">Read more &raquo;</a>
-          </div>
-        @endforeach
-      </div>
-    {{-- Jika slug cocok, tampilan halaman detail --}}
-    @elseif($beritaDipilih)
-      <div class="berita-detail">
-        <h2>{{ $beritaDipilih['judul'] }}</h2>
-        <p><strong>Penulis:</strong> {{$beritaDipilih['penulis'] }}</p>
-        <p>{{ $beritaDipilih['isi'] }}</p>
-
-        <a href="{{ url('/berita') }}" class="btn btn-primary mt-3"> Kembali ke Daftar
-      </div>
-
-     {{-- Jika slug tidak cocok, tampilan halaman detail --}}
-    @elseif($beritaDipilih)
-      <div class="berita-detail">
-        <h2>{{ $beritaDipilih['judul'] }}</h2>
-        <p><strong>Penulis:</strong> {{$beritaDipilih['penulis'] }}</p>
-        <p>{{ $beritaDipilih['isi'] }}</p>
-
-        <a href="{{ url('/berita') }}" class="btn btn-primary mt-3"> Kembali ke Daftar
+<section class="py-5">
+  <div class="container">
+    @forelse($beritas as $berita)
+    @if($loop->first)
+    <!-- Featured Article -->
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto fade-in">
+            <div class="card shadow-lg overflow-hidden">
+                <div class="card-body p-5">
+                    <div class="label-featured">
+                        <i class="fas fa-star"></i> FEATURED
+                    </div>
+                    <a href="/berita/{{ $berita['slug'] }}" style="text-decoration: none;">
+                        <h2 style="color: #6B4423; font-weight: 900; margin-bottom: 15px; font-size: 2.2rem;">
+                            {{ $berita['judul'] }}
+                        </h2>
+                    </a>
+                    <p style="color: #8B6F47; margin-bottom: 20px;">
+                        <i class="fas fa-user-circle"></i> <strong>{{ $berita['penulis'] }}</strong> | 
+                        <i class="fas fa-calendar-alt"></i> {{ \Carbon\Carbon::now()->format('d M Y') }}
+                    </p>
+                    <p style="color: #555; font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+                        {{ Str::limit($berita['konten'] ?? '', 250) }}
+                    </p>
+                    <a href="/berita/{{ $berita['slug'] }}" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i> Baca Artikel Lengkap
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @else
+    @if($loop->iteration == 2)
+    <div class="row">
+    @endif
+        <div class="col-lg-4 col-md-6 mb-4 fade-in">
+            <div class="card shadow-sm h-100" style="overflow: hidden;">
+                <div style="background: linear-gradient(135deg, #E8DCC8, #F5F1E8); height: 150px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                    <i class="fas fa-newspaper" style="color: #6B4423; opacity: 0.3;"></i>
+                </div>
+                <div class="card-body p-4">
+                    <a href="/berita/{{ $berita['slug'] }}" style="text-decoration: none;">
+                        <h5 style="color: #6B4423; font-weight: 700; margin-bottom: 12px; min-height: 60px;">
+                            {{ Str::limit($berita['judul'], 50) }}
+                        </h5>
+                    </a>
+                    <p style="color: #8B6F47; font-size: 0.9rem; margin-bottom: 10px;">
+                        <i class="fas fa-user"></i> {{ $berita['penulis'] }}
+                    </p>
+                    <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">
+                        {{ Str::limit($berita['konten'] ?? '', 100) }}
+                    </p>
+                    <a href="/berita/{{ $berita['slug'] }}" style="color: #6B4423; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 12px;">
+                        Lanjutkan → 
+                    </a>
+                </div>
+            </div>
+        </div>
+    @endif
+    @empty
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                <p style="font-size: 1.1rem; margin: 0;">Belum ada berita yang tersedia saat ini.</p>
+            </div>
+        </div>
+    @endforelse
+    @if(count($beritas) > 1)
+    </div>
+    @endif
   </div>
-
+</section>
 @endsection

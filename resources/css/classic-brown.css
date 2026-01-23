@@ -1,0 +1,387 @@
+/* Classic & Cute Brown & White Theme */
+:root {
+    --brown-dark: #6B4423;
+    --brown-medium: #8B6F47;
+    --brown-light: #A0826D;
+    --brown-very-light: #E8DCC8;
+    --cream: #F5F1E8;
+    --white: #FFFFFF;
+    --text-dark: #4A3728;
+    --accent-brown: #D4A574;
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--cream) 0%, #F0E6D2 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+.navbar-enhanced {
+    background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown-medium) 100%);
+    box-shadow: 0 4px 15px rgba(107, 68, 35, 0.2);
+    border-bottom: 3px solid var(--accent-brown);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    color: var(--cream) !important;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-brand i {
+    font-size: 1.8rem;
+    animation: wobble 2s ease-in-out infinite;
+}
+
+@keyframes wobble {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background: var(--cream);
+    border: 2px solid var(--brown-medium);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(107, 68, 35, 0.15);
+}
+
+.dropdown-item {
+    color: var(--text-dark);
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(90deg, var(--brown-very-light), transparent);
+    border-left-color: var(--brown-dark);
+    color: var(--brown-dark);
+    font-weight: 600;
+}
+
+.dropdown-item i {
+    margin-right: 10px;
+    color: var(--brown-dark);
+}
+
+#threeDotMenu {
+    color: var(--cream) !important;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+#threeDotMenu:hover {
+    transform: scale(1.2);
+    color: var(--accent-brown) !important;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown-medium) 100%);
+    padding: 80px 0;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 60px;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 8px 25px rgba(107, 68, 35, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '☕';
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.1;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(-50%); }
+    50% { transform: translateY(-70%); }
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* ===== CARDS & CONTAINERS ===== */
+.card {
+    border: 2px solid var(--brown-light);
+    border-radius: 15px;
+    background: var(--white);
+    box-shadow: 0 8px 20px rgba(107, 68, 35, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(107, 68, 35, 0.2);
+    border-color: var(--accent-brown);
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+    color: var(--brown-dark);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+    background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown-medium) 100%);
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    font-weight: 700;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(107, 68, 35, 0.3);
+    color: var(--white);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background: var(--accent-brown);
+    border: none;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background: var(--brown-light);
+}
+
+/* ===== LINKS ===== */
+a {
+    color: var(--brown-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-brown);
+    text-decoration: underline;
+}
+
+/* ===== FORMS ===== */
+.form-control {
+    border: 2px solid var(--brown-very-light);
+    border-radius: 10px;
+    padding: 12px 15px;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--brown-dark);
+    box-shadow: 0 0 0 0.2rem rgba(107, 68, 35, 0.25);
+    color: var(--text-dark);
+}
+
+.form-label {
+    color: var(--brown-dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* ===== BADGES & LABELS ===== */
+.badge {
+    background: linear-gradient(135deg, var(--brown-dark), var(--brown-medium));
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.label-featured {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-brown), var(--brown-light));
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* ===== ALERTS ===== */
+.alert {
+    border-left: 4px solid;
+    border-radius: 10px;
+    padding: 15px 20px;
+}
+
+.alert-success {
+    background: #E8F5E9;
+    border-left-color: #4CAF50;
+    color: #2E7D32;
+}
+
+.alert-danger {
+    background: #FFEBEE;
+    border-left-color: #F44336;
+    color: #C62828;
+}
+
+.alert-info {
+    background: var(--brown-very-light);
+    border-left-color: var(--brown-dark);
+    color: var(--brown-dark);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown-medium) 100%);
+    color: var(--cream);
+    padding: 40px 0;
+    margin-top: 60px;
+    text-align: center;
+    border-top: 3px solid var(--accent-brown);
+}
+
+footer a {
+    color: var(--accent-brown);
+}
+
+footer a:hover {
+    color: var(--cream);
+}
+
+/* ===== SECTIONS ===== */
+.section-title {
+    color: var(--brown-dark);
+    font-weight: 900;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brown-dark), var(--accent-brown));
+    border-radius: 2px;
+}
+
+/* ===== SPECIAL ELEMENTS ===== */
+.cute-divider {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 1.5rem;
+    opacity: 0.6;
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--brown-very-light), var(--cream));
+    color: var(--brown-dark);
+    font-size: 1.8rem;
+    margin: 0 auto 15px;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
