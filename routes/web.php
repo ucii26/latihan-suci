@@ -3,6 +3,7 @@
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TentangKamiController;
 use App\Models\Berita;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +49,9 @@ Route::get('/datamahasiswa', [MahasiswaController::class,'index'])->name('datama
 Route::get('/detail/{id}',[MahasiswaController::class, 'detail'])->name('detail');
 Route::get('/tampildata/{id}',[MahasiswaController::class, 'tampildata'])->name('tampildata');
 
+// Public tentang kami routes
+Route::get('/tentang-kami', [TentangKamiController::class, 'show'])->name('tentang-kami.public');
+
 // Protected mahasiswa routes (untuk semua yang sudah login)
 Route::middleware('auth')->group(function () {
     Route::get('/tambahmahasiswa', [MahasiswaController::class, 'tambahmahasiswa'])->name('mahasiswa.tambah');
@@ -59,6 +63,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/my-profile', [\App\Http\Controllers\ProfileController::class, 'myProfile'])->name('my-profile');
     Route::get('/edit-profile', [\App\Http\Controllers\ProfileController::class, 'editProfile'])->name('edit-profile');
     Route::post('/update-profile', [\App\Http\Controllers\ProfileController::class, 'updateProfile'])->name('update-profile');
+
+    // Protected tentang kami routes
+    Route::get('/admin/tentang-kami', [TentangKamiController::class, 'index'])->name('tentang-kami.index');
+    Route::post('/tentang-kami', [TentangKamiController::class, 'store'])->name('tentang-kami.store');
+    Route::get('/tentang-kami/create', [TentangKamiController::class, 'create'])->name('tentang-kami.create');
+    Route::get('/tentang-kami/{id}/edit', [TentangKamiController::class, 'edit'])->name('tentang-kami.edit');
+    Route::put('/tentang-kami/{id}', [TentangKamiController::class, 'update'])->name('tentang-kami.update');
+    Route::delete('/tentang-kami/{id}', [TentangKamiController::class, 'destroy'])->name('tentang-kami.destroy');
 });
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
