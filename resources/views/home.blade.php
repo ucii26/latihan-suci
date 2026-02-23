@@ -52,7 +52,7 @@
 						<div style="font-size: 3rem; margin-bottom: 15px;">ℹ️</div>
 						<h5 class="card-title" style="color: #6B4423;">Tentang Kami</h5>
 						<p class="card-text">Pelajari lebih lanjut tentang platform kami, visi, dan misi.</p>
-						<a href="/about" class="btn btn-primary btn-sm">
+						<a href="{{ route('about') }}" class="btn btn-primary btn-sm">
 							<i class="fas fa-arrow-right"></i> Pelajari Lebih
 						</a>
 					</div>
