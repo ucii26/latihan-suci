@@ -12,16 +12,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::create([
-            'name' => 'Admin User',
-            'email' => 'admin@example.com',
-            'password' => bcrypt('password123'),
-        ]);
+        \App\Models\User::firstOrCreate(
+            ['email' => 'admin@example.com'],
+            ['name' => 'Admin User', 'password' => bcrypt('password123')]
+        );
 
-        \App\Models\User::create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => bcrypt('password123'),
-        ]);
+        \App\Models\User::firstOrCreate(
+            ['email' => 'test@example.com'],
+            ['name' => 'Test User', 'password' => bcrypt('password123')]
+        );
+
+        // Run TentangKami seeder (idempotent)
+        $this->call(\Database\Seeders\TentangKamiSeeder::class);
     }
 }
