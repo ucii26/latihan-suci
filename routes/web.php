@@ -51,6 +51,7 @@ Route::get('/tampildata/{id}',[MahasiswaController::class, 'tampildata'])->name(
 
 // Public tentang kami routes
 Route::get('/tentang-kami', [TentangKamiController::class, 'show'])->name('tentang-kami.public');
+Route::get('/about', [TentangKamiController::class, 'show'])->name('about');
 
 // Protected mahasiswa routes (untuk semua yang sudah login)
 Route::middleware('auth')->group(function () {
