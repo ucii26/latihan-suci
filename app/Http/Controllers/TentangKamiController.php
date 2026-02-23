@@ -54,7 +54,15 @@ class TentangKamiController extends Controller
         } else {
             $tentangKami = TentangKami::findOrFail($id);
         }
-        
+        // Jika belum ada data di database, gunakan konten fallback sehingga halaman tidak kosong
+        if (!$tentangKami) {
+            $fallback = new \stdClass();
+            $fallback->judul = 'Tentang SUCI — Sistem Informasi Kampus';
+            $fallback->konten = "Selamat datang di SUCI — platform informasi dan manajemen data mahasiswa.\n\nSUCI (Sistem Ulasan & Catalog Informasi) bertujuan untuk menyediakan akses mudah terhadap berita, data akademik, dan layanan kampus. Kami berkomitmen terhadap kualitas pendidikan, inovasi teknologi, dan pengembangan komunitas yang inklusif.\n\nMisi kami:\n- Menyediakan informasi yang akurat dan cepat.\n- Mendukung proses pembelajaran berbasis teknologi.\n- Membangun komunitas mahasiswa yang produktif dan kolaboratif.";
+
+            $tentangKami = $fallback;
+        }
+
         return view('tentang-kami.show', [
             'title' => 'Tentang Kami',
             'tentangKami' => $tentangKami
