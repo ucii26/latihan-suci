@@ -19,7 +19,7 @@ Route::get('/profile', function () {
         "title" => "Profile",
         "nama" => "Suci Nento",
         "nohp" => "081244449681",
-        "foto" => "images/suci.jpeg",
+        "foto" => asset('images/suci.jpeg'),
     ]);
 });
 
