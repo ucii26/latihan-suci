@@ -45,6 +45,7 @@ Route::post('/reset-password', [\App\Http\Controllers\Auth\ForgotPasswordControl
 
 // Public mahasiswa routes (dapat dilihat oleh siapa saja)
 Route::get('/datamahasiswa', [MahasiswaController::class,'index'])->name('datamahasiswa');
+Route::get('/detail/{id}',[MahasiswaController::class, 'detail'])->name('detail');
 Route::get('/tampildata/{id}',[MahasiswaController::class, 'tampildata'])->name('tampildata');
 
 // Protected mahasiswa routes (untuk semua yang sudah login)

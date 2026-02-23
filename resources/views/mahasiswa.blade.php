@@ -73,6 +73,9 @@
                 <td style="padding: 16px 20px; color: #555; font-size: 0.95rem;">{{ $mahasiswa["email"] }}</td>
                 <td style="padding: 16px 20px; color: #555;">{{ $mahasiswa["nohp"] }}</td>
                 <td style="padding: 16px 20px; text-align: center;">
+                    <a href="detail/{{ $mahasiswa['id'] }}" class="btn btn-sm" style="background: #10B981; color: white; border: none; padding: 8px 14px; border-radius: 8px; margin-right: 5px; font-weight: 700; transition: all 0.3s ease; text-shadow: 0 1px 2px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(16, 185, 129, 0.3)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">
+                      <i class="fas fa-eye"></i> Detail
+                    </a>
                     <a href="tampildata/{{ $mahasiswa['id'] }}" class="btn btn-sm" style="background: #3B82F6; color: white; border: none; padding: 8px 14px; border-radius: 8px; margin-right: 5px; font-weight: 700; transition: all 0.3s ease; text-shadow: 0 1px 2px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(59, 130, 246, 0.3)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">
                       <i class="fas fa-edit"></i> Edit
                     </a>
