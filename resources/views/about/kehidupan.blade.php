@@ -3,7 +3,11 @@
 @section('content')
 <div class="container" style="padding:80px 0;">
   <div style="text-align:center; margin-bottom:30px;">
-    <img src="/images/about-kehidupan.svg" alt="Kehidupan Mahasiswa" style="max-width:480px; width:100%; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.06);" />
+    @if (file_exists(public_path('images/about-kehidupan.jpg')))
+      <img src="{{ asset('images/about-kehidupan.jpg') }}" alt="Kehidupan Mahasiswa" style="max-width:480px; width:100%; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.06);" />
+    @else
+      <img src="{{ asset('images/about-kehidupan.svg') }}" alt="Kehidupan Mahasiswa" style="max-width:480px; width:100%; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.06);" />
+    @endif
   </div>
   <h1 style="color:#1E3A8A; font-weight:900; margin-bottom:20px;">Kehidupan Mahasiswa</h1>
   <p style="font-size:1.05rem; color:#475569; line-height:1.8;">Kehidupan kampus penuh kegiatan: organisasi mahasiswa, lomba, workshop, dan dukungan pengembangan soft-skill. Kami mendukung lingkungan yang inklusif dan kreatif.</p>
