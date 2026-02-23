@@ -30,7 +30,7 @@ class MahasiswaController extends Controller
         // Validasi input termasuk NIM unik
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'nim' => 'required|integer|unique:mahasiswas,nim',
+            'nim' => 'required|numeric|unique:mahasiswas,nim',
             'prodi' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'nohp' => 'required|string|max:15',
@@ -73,7 +73,7 @@ class MahasiswaController extends Controller
         // Validasi input dengan NIM unik kecuali untuk data yang sedang diedit
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'nim' => 'required|integer|unique:mahasiswas,nim,' . $id,
+            'nim' => 'required|numeric|unique:mahasiswas,nim,' . $id,
             'prodi' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'nohp' => 'required|string|max:15',
