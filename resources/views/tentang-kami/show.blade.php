@@ -28,21 +28,27 @@
 
             <!-- Decorative Elements -->
             <div style="display: flex; gap: 20px; margin-top: 60px; justify-content: center; flex-wrap: wrap;">
-              <div style="flex: 1; min-width: 200px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.1)); border-radius: 15px; padding: 30px; text-align: center; border-left: 5px solid #3B82F6;">
-                <i class="fas fa-book-reader" style="font-size: 2.5rem; color: #3B82F6; margin-bottom: 15px;"></i>
-                <h4 style="color: #1E3A8A; margin-bottom: 10px;">Akademik & Kurikulum</h4>
-                <p style="color: #666; margin: 0;">Berkualitas, relevan, dan berbasis industri</p>
-              </div>
-              <div style="flex: 1; min-width: 200px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.1)); border-radius: 15px; padding: 30px; text-align: center; border-left: 5px solid #3B82F6;">
-                <i class="fas fa-user-friends" style="font-size: 2.5rem; color: #3B82F6; margin-bottom: 15px;"></i>
-                <h4 style="color: #1E3A8A; margin-bottom: 10px;">Kehidupan Mahasiswa</h4>
-                <p style="color: #666; margin: 0;">Aktivitas, organisasi, dan dukungan kemahasiswaan</p>
-              </div>
-              <div style="flex: 1; min-width: 200px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.1)); border-radius: 15px; padding: 30px; text-align: center; border-left: 5px solid #3B82F6;">
-                <i class="fas fa-lightbulb" style="font-size: 2.5rem; color: #3B82F6; margin-bottom: 15px;"></i>
-                <h4 style="color: #1E3A8A; margin-bottom: 10px;">Riset & Inovasi</h4>
-                <p style="color: #666; margin: 0;">Mendorong penelitian dan solusi teknologi</p>
-              </div>
+              <a href="{{ route('about.akademik') }}" style="text-decoration:none; color:inherit; flex: 1; min-width: 200px;">
+                <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.1)); border-radius: 15px; padding: 30px; text-align: center; border-left: 5px solid #3B82F6; height:100%;">
+                  <i class="fas fa-book-reader" style="font-size: 2.5rem; color: #3B82F6; margin-bottom: 15px;"></i>
+                  <h4 style="color: #1E3A8A; margin-bottom: 10px;">Akademik & Kurikulum</h4>
+                  <p style="color: #666; margin: 0;">Berkualitas, relevan, dan berbasis industri</p>
+                </div>
+              </a>
+              <a href="{{ route('about.kehidupan') }}" style="text-decoration:none; color:inherit; flex: 1; min-width: 200px;">
+                <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.1)); border-radius: 15px; padding: 30px; text-align: center; border-left: 5px solid #3B82F6; height:100%;">
+                  <i class="fas fa-user-friends" style="font-size: 2.5rem; color: #3B82F6; margin-bottom: 15px;"></i>
+                  <h4 style="color: #1E3A8A; margin-bottom: 10px;">Kehidupan Mahasiswa</h4>
+                  <p style="color: #666; margin: 0;">Aktivitas, organisasi, dan dukungan kemahasiswaan</p>
+                </div>
+              </a>
+              <a href="{{ route('about.riset') }}" style="text-decoration:none; color:inherit; flex: 1; min-width: 200px;">
+                <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.1)); border-radius: 15px; padding: 30px; text-align: center; border-left: 5px solid #3B82F6; height:100%;">
+                  <i class="fas fa-lightbulb" style="font-size: 2.5rem; color: #3B82F6; margin-bottom: 15px;"></i>
+                  <h4 style="color: #1E3A8A; margin-bottom: 10px;">Riset & Inovasi</h4>
+                  <p style="color: #666; margin: 0;">Mendorong penelitian dan solusi teknologi</p>
+                </div>
+              </a>
             </div>
 
           </div>

@@ -4,6 +4,7 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TentangKamiController;
+use App\Http\Controllers\AboutController;
 use App\Models\Berita;
 use Illuminate\Support\Facades\Route;
 
@@ -52,6 +53,11 @@ Route::get('/tampildata/{id}',[MahasiswaController::class, 'tampildata'])->name(
 // Public tentang kami routes
 Route::get('/tentang-kami', [TentangKamiController::class, 'show'])->name('tentang-kami.public');
 Route::get('/about', [TentangKamiController::class, 'show'])->name('about');
+
+// Detail pages for tentang kami
+Route::get('/about/akademik', [AboutController::class, 'akademik'])->name('about.akademik');
+Route::get('/about/kehidupan', [AboutController::class, 'kehidupan'])->name('about.kehidupan');
+Route::get('/about/riset', [AboutController::class, 'riset'])->name('about.riset');
 
 // Protected mahasiswa routes (untuk semua yang sudah login)
 Route::middleware('auth')->group(function () {
