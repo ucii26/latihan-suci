@@ -37,7 +37,14 @@ class ContactController extends Controller
         ]);
 
         try {
-           
+            // kirim email ke alamat administrator yang ditetapkan dalam konfigurasi
+                        Mail::raw("Pesan dari: {$validated['name']} <{$validated['email']}>\n\n" .
+                                "Subjek: {$validated['subject']}\n\n{$validated['message']}", function ($m) use ($validated) {
+                                $m->to(config('mail.from.address'))
+                                    ->replyTo($validated['email'])
+                                    ->subject('Form Kontak: ' . $validated['subject']);
+                        });
+
             return redirect()->route('contact.index')
                            ->with('success', 'Pesan Anda berhasil dikirim! Kami akan menghubungi Anda segera.');
         } catch (\Exception $e) {
